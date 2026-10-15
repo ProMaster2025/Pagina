@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><title>Mapa conceptual CTI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f9f9f4;--ln:#1d2433}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#23262e;--ln:#e9e9e9}}
+:root[data-theme="dark"]{--bg:#23262e;--ln:#e9e9e9}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);font:14px/1.4 "Segoe UI",Arial,sans-serif;color:#1d2433;padding:16px}
+.sc{overflow-x:auto}.map{min-width:1150px;max-width:1300px;margin:0 auto;padding:4px}
+.f,.title{font-family:"Caveat Brush",Impact,"Arial Black",sans-serif;text-transform:uppercase}
+.title{background:#ffd966;border:2px solid #1d2433;border-radius:36px;text-align:center;font-size:2.4rem;padding:12px 20px;max-width:760px;margin:0 auto;line-height:1.1}
+.title small{display:block;font-size:1rem;letter-spacing:.05em}
+.tree{position:relative;margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.stem{position:absolute;left:50%;top:-36px;height:36px;border-left:3px solid var(--ln)}
+.bar{position:absolute;top:0;left:10%;right:10%;border-top:3px solid var(--ln)}
+.col{position:relative;padding-top:0}
+.col::after{content:"";position:absolute;left:50%;top:0;bottom:60px;border-left:3px solid var(--ln);z-index:0}
+.it{position:relative;z-index:1;margin-bottom:14px}
+.pill{border:2px solid #1d2433;border-radius:14px;text-align:center;padding:4px 8px;font-size:1.1rem;color:#1d2433;position:relative;z-index:1;margin:0 4px}
+.bx{background:#fff;border:2px solid #1d2433;border-radius:22px;padding:10px 12px;margin-top:6px;text-align:center;font-size:.84rem;position:relative;z-index:1}
+.bx.l{text-align:left}
+.img{font-size:3rem;line-height:1.3;background:#fff}
+.img small{display:block;font-size:.65rem;color:#555;font-family:"Segoe UI",Arial,sans-serif}
+.src{margin-top:18px;background:#fff;border:2px solid #1d2433;border-radius:22px;padding:12px 18px;font-size:.78rem}
+.src b{font-family:"Caveat Brush",Impact,sans-serif;font-size:1.1rem;text-transform:uppercase}.src p{margin:3px 0}
+</style></head><body><div class="sc"><div class="map">
+<div class="title">Ciencia, Tecnología e Innovación<small>Tres proyectos que transforman la sociedad</small></div>
+<div class="tree"><div class="stem"></div><div class="bar"></div><div id="cols" style="display:contents"></div></div>
+<div class="src"><b>Fuentes de consulta</b>
+<p>Nobel Prize Outreach. (2020). <i>The Nobel Prize in Chemistry 2020</i>. nobelprize.org</p>
+<p>U.S. Food and Drug Administration. (2023). <i>FDA approves first gene therapies to treat patients with sickle cell disease</i>. fda.gov</p>
+<p>Climeworks. (2021). <i>Orca, the first large-scale direct air capture and storage plant</i>. climeworks.com</p>
+<p>Safaricom. (s. f.). <i>M-PESA</i>. safaricom.co.ke</p>
+<p>Jack, W. y Suri, T. (2014). Risk sharing and transactions costs: Evidence from Kenya's mobile money revolution. <i>American Economic Review, 104</i>(1), 183-223.</p></div>
+</div></div>
+<script>
+const P=[
+{k:'#ff9a4d',t:'Ciencia',d:'Genera conocimiento nuevo al explicar cómo funcionan la naturaleza y la vida.',n:'Casgevy: terapia génica CRISPR',e:'🧬',
+o:'Corregir la causa genética de la anemia falciforme y la beta talasemia editando el ADN del paciente.',
+s:'Se editan con CRISPR-Cas9 células madre del propio paciente para reactivar la hemoglobina fetal y se reinfunden. Aprobada en 2023 (Reino Unido y EE. UU.), a partir del Nobel de Química 2020.',
+p:'Enfermedades hereditarias con dolor crónico, daño de órganos y muerte temprana, con pocos tratamientos.',
+a:'Beneficia a pacientes con estas enfermedades y abre la puerta a curas genéticas. Su alto costo limita el acceso.'},
+{k:'#c9b6f0',t:'Tecnología',d:'Aplica el conocimiento científico para crear herramientas, equipos y procesos.',n:'Orca: captura de CO₂ del aire',e:'🏭',
+o:'Extraer dióxido de carbono de la atmósfera y almacenarlo de forma permanente.',
+s:'Planta de Climeworks en Islandia (2021). Filtros retienen el CO₂ del aire y, con Carbfix, se inyecta disuelto en agua al subsuelo, donde se convierte en roca.',
+p:'El exceso de gases de efecto invernadero que impulsa el cambio climático.',
+a:'Beneficia al planeta y a las comunidades. Capta miles de toneladas al año, aún poco frente a las emisiones globales; requiere escalarse y abaratarse.'},
+{k:'#5db32a',t:'Innovación',d:'Convierte ideas y tecnologías en soluciones nuevas que la gente adopta y que generan valor.',n:'M-Pesa: dinero móvil',e:'📱',
+o:'Permitir enviar, recibir y guardar dinero desde un celular básico, sin cuenta bancaria.',
+s:'Lanzado en Kenia en 2007 por Safaricom y Vodafone. Se deposita efectivo con agentes y se transfiere por mensaje de texto. Combina tecnología existente con un nuevo modelo de servicio.',
+p:'La exclusión financiera de millones de personas sin acceso a bancos.',
+a:'Beneficia a población rural, de bajos ingresos y a pequeños comerciantes: facilita pagos, ahorro y remesas. Ha inspirado servicios en otros países.'}];
+const lab=['Objetivo principal','Descripción breve','Problemática atendida','Alcance o impacto'],key=['o','s','p','a'];
+let h='';
+P.forEach(p=>{h+=`<div class="col"><div class="it"><div class="pill f" style="background:${p.k}">${p.t}</div><div class="bx">${p.d}</div></div>
+<div class="it"><div class="pill f" style="background:${p.k}">${p.n}</div><div class="bx img">${p.e}<small>Imagen de referencia (reemplazar por foto oficial)</small></div></div>`;
+key.forEach((q,i)=>h+=`<div class="it"><div class="pill f" style="background:${p.k}">${lab[i]}</div><div class="bx">${p[q]}</div></div>`);h+='</div>'});
+h+=`<div class="col"><div class="it"><div class="pill f" style="background:#ffadcb">Relación entre conceptos</div><div class="bx">Forman un ciclo: del conocimiento a la aplicación y de allí al beneficio social.</div></div>
+<div class="it"><div class="pill f" style="background:#ffadcb">Ciencia ➜ Tecnología</div><div class="bx">Lo que se sabe del ADN o de la química del CO₂ permite diseñar terapias y plantas.</div></div>
+<div class="it"><div class="pill f" style="background:#ffadcb">Tecnología ➜ Innovación</div><div class="bx">Las herramientas transforman la sociedad cuando se vuelven servicios que la gente usa, como M-Pesa.</div></div>
+<div class="it"><div class="pill f" style="background:#ffadcb">Innovación ➜ Ciencia</div><div class="bx">Los problemas reales (salud, clima, pobreza) generan nuevas preguntas de investigación.</div></div>
+<div class="it"><div class="pill f" style="background:#ffadcb">Ojo</div><div class="bx">Los proyectos se mezclan: Casgevy también es tecnología e innovación. Se clasifican por su aporte principal.</div></div></div>
+<div class="col"><div class="it"><div class="pill f" style="background:#96cdf5">Diferencias</div><div class="bx">Cada concepto responde una pregunta distinta y deja un resultado distinto.</div></div>
+<div class="it"><div class="pill f" style="background:#96cdf5">Ciencia</div><div class="bx l"><b>Pregunta:</b> ¿cómo funciona?<br><b>Resultado:</b> conocimiento<br><b>Aporte:</b> curar enfermedades genéticas</div></div>
+<div class="it"><div class="pill f" style="background:#96cdf5">Tecnología</div><div class="bx l"><b>Pregunta:</b> ¿cómo lo hacemos posible?<br><b>Resultado:</b> herramientas y procesos<br><b>Aporte:</b> reducir el CO₂ del aire</div></div>
+<div class="it"><div class="pill f" style="background:#96cdf5">Innovación</div><div class="bx l"><b>Pregunta:</b> ¿cómo lo hacemos útil y accesible?<br><b>Resultado:</b> valor social adoptado<br><b>Aporte:</b> inclusión financiera</div></div></div>`;
+document.getElementById('cols').innerHTML=h;
+</script></body></html>
